@@ -1,0 +1,385 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap');
+
+/*======= Global Attributes =======*/
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+}
+
+section {
+  /* min-height: 100vh; */
+  padding: 3em 4em;
+}
+
+/*======== Fonts & Titles ========*/
+
+h1, h2, h3 {
+  font-family: 'Roboto Slab', serif;
+  color: #272341;
+}
+
+a, p, li, button {
+  font-family: 'Montserrat', sans-serif;
+  color: #272341;
+  /* font-size: 1.2em; */
+}
+
+.cover-title {
+  color: #fff;
+  font-size: 3em;
+  font-weight: normal;
+  margin-top: 0;
+  margin-bottom: 0.2em;
+}
+
+
+.section-title {
+  font-size: 2.5em;
+  text-align: center;
+}
+
+.icon p {
+  margin-bottom: 0;
+  margin-top: 0.5em;
+}
+
+.aboutme h2 {
+  margin-top: 0;
+} 
+
+.contact * {
+  color: #fff;
+}
+
+
+/*======== Sections ========*/
+
+/* Home Section */
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  height: 100vh;
+
+  background-image: url(../img/dt.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+a.button {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+.button {
+  z-index: 1;
+  position: relative;
+  padding: 0.5em 1em;
+  outline: none;
+  border: 2px solid whitesmoke;
+  background-color: transparent;
+  border-radius: 10px;
+}
+
+.button::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #2d2f57;
+  transform-origin: center left;
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  border-radius: 8px;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.button:hover::before {
+  transform-origin: center left;
+  transform: scaleX(1);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+/* About Me Section */
+.aboutme {
+  display: grid;
+  grid-template-columns: 2fr 3fr ;
+}
+
+.aboutme .section-title {
+  grid-column: span 2;
+  /* grid-column: 1 / 3; */
+}
+
+.aboutme .profile {
+  /* grid-row: span 2; */
+  display: grid;
+  justify-content: center;
+  align-content: center;
+}
+
+.img-frame {
+  display: inline-block;
+  /* position: relative; */
+  width: 225px;
+  height: 240px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+  /* margin: 20px 0px; */
+}
+
+.img-frame img {
+  width: auto;
+  height: 300px;
+  margin-top: -15px;
+}
+
+/* Skills Section */
+.skills {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+}
+
+.skills .section-title {
+  grid-column: span 2;
+}
+
+.skill-list {
+  /* padding:20px; */
+  display:grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(auto-fill, 120px);
+  justify-content: center;
+  justify-items: center;
+}
+
+.icon {
+  text-align: center;
+  /* border: 1px solid lightcoral; */
+  transition: all .2s ease-in-out;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.icon:active {
+  transform: scale(1.0);
+}
+
+.icon-bg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* background-color: lightgray; */
+  height: 5em;
+  width: 5em;
+  border-radius: 1em;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+}
+
+.icon-svg {
+  height: 4em;
+  width: auto;
+}
+
+/* Portfolio Section */
+.portfolio {
+
+}
+
+.project {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0;
+}
+
+.proj-desc {
+  flex: 5 1 200px;
+  /* flex-basis: 200px;
+  flex-grow: 5;
+  flex-shrink: 1; */
+}
+
+.proj-img {
+  flex: 5 1 400px;
+  /* flex-basis: 400px;
+  flex-grow: 5;
+  flex-shrink:1; */
+}
+
+.proj-img > img {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+}
+
+/* Contact Section */
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #333236;
+}
+
+/*======== Reusable/Testing Classes ========*/
+
+.card {
+  /* border-radius: 3px; */
+  /* border: 2px solid lightgray; */
+  /* padding: 1em; */
+}
+
+/*========= Flexbox Navbar  =========*/
+
+.fixed-nav {
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 999;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  /* padding bottom prevents li margins from overlapping */
+  padding-bottom: 10px;
+  height: 50px;
+}
+
+.main-nav {
+  display: flex;
+  margin-right: 30px;
+  flex-direction: row;
+  justify-content: flex-end;
+  
+  list-style-type: none;
+}
+
+.colour {
+  background-color:#2d2f57;
+}
+
+.white {
+  color: #fff;
+}
+
+.main-nav li {
+  margin: 0;
+}
+
+.nav-links {
+  margin-left: 1em;
+}
+
+.navbar-toggle {
+  display: none;
+}
+
+.nav-links,
+.logo {
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.logo {
+  font-size: 22px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+
+.logo:hover,
+.nav-links:hover {
+  color: rgba(255, 255, 255, 1);
+  /* color: rgba(39, 35, 65, 0.5); */
+}
+
+@media screen and (max-width: 768px) {
+
+  .fixed-nav:hover {
+    background-color: #2d2f57;
+  }
+
+  .logo {
+    display: inline-block;
+  }
+
+  .main-nav {
+    display: flex;
+    flex-direction: column;
+    /* Testing animation */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.6s ease-in-out;
+    /* background-color:#2d2f57; */
+  }
+
+  .main-nav.active {    
+    /* Testing animation */
+    max-height: 250px;
+    margin-top: 13px;
+    background-color:#2d2f57;
+  }
+
+  .main-nav li {
+    text-align: center;
+    margin: 15px auto;
+  }
+
+  /* displays the toggle btn */
+  .navbar-toggle {
+    display: block;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer; 
+    color: rgba(255, 255, 255, 1);
+    font-size: 24px;
+  }
+
+  .navbar-toggle:active {
+    font-size: 23px;
+  }
+
+  .navbar {
+    display: block;
+  }
+
+  /* removes list padding and margins */
+  ul.main-nav {
+    padding: 0;
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 960px) {
+  /* .project {
+    grid-auto-columns: 1fr;
+  } */
+}
