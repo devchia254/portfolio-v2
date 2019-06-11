@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat|Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Karla:700|Montserrat&display=swap');
 
 /*======= Global Attributes =======*/
 html {
@@ -21,13 +21,16 @@ section {
 /*======== Fonts & Titles ========*/
 
 h1, h2, h3 {
-  font-family: 'Roboto Slab', serif;
-  color: #272341;
+  font-family: 'Karla', sans-serif;
+  color: #2F3138;
 }
 
 a, p, li, button {
   font-family: 'Montserrat', sans-serif;
-  color: #272341;
+  color: #4F535A;
+  font-weight: 300;
+    line-height: 1.5em;
+
   /* font-size: 1.2em; */
 }
 
@@ -99,7 +102,7 @@ a.button {
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #2d2f57;
+  background-color: #3D3F47;
   transform-origin: center left;
   transform: scaleX(0);
   transition: transform 0.5s ease-in-out;
@@ -130,7 +133,7 @@ a.button {
   /* grid-column: 1 / 3; */
 }
 
-.aboutme .profile {
+.aboutme .aboutme-content {
   /* grid-row: span 2; */
   display: grid;
   justify-content: center;
@@ -152,6 +155,14 @@ a.button {
   width: auto;
   height: 300px;
   margin-top: -15px;
+}
+
+.aboutme-content .content {
+}
+
+#content2 {
+  grid-column: span 2;
+  padding: 20px;
 }
 
 /* Skills Section */
@@ -242,7 +253,7 @@ a.button {
   justify-content: center;
   align-items: center;
 
-  background-color: #333236;
+  background-color: #3D3F47;
 }
 
 /*======== Reusable/Testing Classes ========*/
@@ -282,7 +293,7 @@ a.button {
 }
 
 .colour {
-  background-color:#2d2f57;
+  background-color:#3D3F47;
 }
 
 .white {
