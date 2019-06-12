@@ -55,7 +55,21 @@ a, p, li, button {
 
 .aboutme h2 {
   margin-top: 0;
-} 
+}
+
+.aboutme-content .content p {
+  margin-top:0;
+}
+
+a.button {
+  text-decoration: none;
+  color: whitesmoke;
+}
+
+a.resume {
+  color:#3D3F47;
+}
+
 
 .contact * {
   color: #fff;
@@ -77,11 +91,6 @@ a, p, li, button {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
-}
-
-a.button {
-  text-decoration: none;
-  color: whitesmoke;
 }
 
 .button {
@@ -111,6 +120,7 @@ a.button {
 
 .button:hover {
   cursor: pointer;
+  color: white;
 }
 
 .button:hover::before {
@@ -125,7 +135,7 @@ a.button {
 /* About Me Section */
 .aboutme {
   display: grid;
-  grid-template-columns: 2fr 3fr ;
+  grid-template-columns: 3fr 2fr ;
 }
 
 .aboutme .section-title {
@@ -137,7 +147,11 @@ a.button {
   /* grid-row: span 2; */
   display: grid;
   justify-content: center;
-  align-content: center;
+  /*align-content: center;*/
+}
+
+#profile-img {
+  grid-row: span 2;
 }
 
 .img-frame {
@@ -157,13 +171,20 @@ a.button {
   margin-top: -15px;
 }
 
-.aboutme-content .content {
+.resume {
+  border: 2px solid #3D3F47;
+  /*background-color: #3D3F47;*/
 }
 
-#content2 {
-  grid-column: span 2;
-  padding: 20px;
+.resume::before {
+  background-color: #0B92DB;
 }
+
+
+#content2 {
+/*  grid-column: span 2;*/  
+/*padding: 20px;
+*/}
 
 /* Skills Section */
 .skills {
