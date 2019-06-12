@@ -15,7 +15,7 @@ body {
 
 section {
   /* min-height: 100vh; */
-  padding: 3em 4em;
+  padding: 2em 6em;
 }
 
 /*======== Fonts & Titles ========*/
@@ -23,6 +23,10 @@ section {
 h1, h2, h3 {
   font-family: 'Karla', sans-serif;
   color: #2F3138;
+}
+
+h2 {
+  margin-top: 0;
 }
 
 a, p, li, button {
@@ -53,11 +57,11 @@ a, p, li, button {
   margin-top: 0.5em;
 }
 
-.aboutme h2 {
+/* .aboutme h2 {
   margin-top: 0;
-}
+} */
 
-.aboutme-content .content p {
+.aboutme-items p {
   margin-top:0;
 }
 
@@ -136,6 +140,7 @@ a.resume {
 .aboutme {
   display: grid;
   grid-template-columns: 3fr 2fr ;
+  grid-gap: 20px;
 }
 
 .aboutme .section-title {
@@ -143,15 +148,14 @@ a.resume {
   /* grid-column: 1 / 3; */
 }
 
-.aboutme .aboutme-content {
-  /* grid-row: span 2; */
-  display: grid;
-  justify-content: center;
-  /*align-content: center;*/
+.aboutme-items {
+  
 }
 
-#profile-img {
+.aboutme-item2 {
   grid-row: span 2;
+  display: grid;
+  justify-items: center
 }
 
 .img-frame {
@@ -171,20 +175,18 @@ a.resume {
   margin-top: -15px;
 }
 
+.img-content {
+  padding: 1em;
+}
+
 .resume {
   border: 2px solid #3D3F47;
   /*background-color: #3D3F47;*/
 }
 
 .resume::before {
-  background-color: #0B92DB;
+  background-color: #10c5f8;
 }
-
-
-#content2 {
-/*  grid-column: span 2;*/  
-/*padding: 20px;
-*/}
 
 /* Skills Section */
 .skills {
@@ -196,12 +198,12 @@ a.resume {
   grid-column: span 2;
 }
 
-.skill-list {
+.icon-list {
   /* padding:20px; */
   display:grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, 120px);
-  justify-content: center;
+  justify-content: space-evenly;
   justify-items: center;
 }
 
@@ -241,13 +243,13 @@ a.resume {
 
 }
 
-.project {
+.project-items {
   display: flex;
   flex-wrap: wrap;
   margin: 50px 0;
 }
 
-.proj-desc {
+.proj-content {
   flex: 5 1 200px;
   /* flex-basis: 200px;
   flex-grow: 5;
@@ -259,6 +261,7 @@ a.resume {
   /* flex-basis: 400px;
   flex-grow: 5;
   flex-shrink:1; */
+  padding: 1em;
 }
 
 .proj-img > img {
