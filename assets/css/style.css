@@ -65,20 +65,26 @@ a, p, li, button {
   margin-top:0;
 }
 
+.aboutme-items h2 {
+  margin-bottom: 0.5em;
+}
+
 a.button {
   text-decoration: none;
   color: whitesmoke;
 }
 
-a.resume {
+a.resume-btn {
   color:#3D3F47;
 }
-
 
 .contact * {
   color: #fff;
 }
 
+.skills-content p {
+  margin-top: 0;
+}
 
 /*======== Sections ========*/
 
@@ -140,7 +146,9 @@ a.resume {
 .aboutme {
   display: grid;
   grid-template-columns: 3fr 2fr ;
-  grid-gap: 20px;
+/*  grid-gap: 20px;
+*/  justify-items: center;
+  align-items: start;
 }
 
 .aboutme .section-title {
@@ -152,11 +160,16 @@ a.resume {
   
 }
 
+.aboutme-content {
+  padding: 0 1em;
+}
+
 .aboutme-item2 {
   grid-row: span 2;
   display: grid;
-  justify-items: center
-}
+  justify-items: center;
+/*  background-color: lightblue;
+*/}
 
 .img-frame {
   display: inline-block;
@@ -179,12 +192,12 @@ a.resume {
   padding: 1em;
 }
 
-.resume {
+.resume-btn {
   border: 2px solid #3D3F47;
   /*background-color: #3D3F47;*/
 }
 
-.resume::before {
+.resume-btn::before {
   background-color: #10c5f8;
 }
 
@@ -196,6 +209,10 @@ a.resume {
 
 .skills .section-title {
   grid-column: span 2;
+}
+
+.skills-content {
+  padding: 0 1em;
 }
 
 .icon-list {
@@ -254,6 +271,8 @@ a.resume {
   /* flex-basis: 200px;
   flex-grow: 5;
   flex-shrink: 1; */
+
+  padding: 0 1em;
 }
 
 .proj-img {
@@ -261,7 +280,8 @@ a.resume {
   /* flex-basis: 400px;
   flex-grow: 5;
   flex-shrink:1; */
-  padding: 1em;
+
+  padding: 0 1em;
 }
 
 .proj-img > img {
@@ -284,7 +304,7 @@ a.resume {
 
 .card {
   /* border-radius: 3px; */
-  /* border: 2px solid lightgray; */
+   /*border: 2px solid lightgray;*/ 
   /* padding: 1em; */
 }
 
