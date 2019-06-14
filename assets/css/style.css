@@ -33,7 +33,7 @@ a, p, li, button {
   font-family: 'Montserrat', sans-serif;
   color: #4F535A;
   font-weight: 300;
-    line-height: 1.5em;
+  line-height: 1.5em;
 
   /* font-size: 1.2em; */
 }
@@ -75,7 +75,7 @@ a.button {
 }
 
 a.resume-btn {
-  color:#3D3F47;
+  color:#fff;
 }
 
 .contact * {
@@ -178,7 +178,7 @@ a.resume-btn {
   height: 240px;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
   /* margin: 20px 0px; */
 }
 
@@ -192,14 +192,65 @@ a.resume-btn {
   padding: 1em;
 }
 
-.resume-btn {
+/*.resume-btn {
   border: 2px solid #3D3F47;
-  /*background-color: #3D3F47;*/
 }
 
 .resume-btn::before {
   background-color: #10c5f8;
 }
+
+.resume-btn:hover::before {
+  border: 2px solid green;
+}*/
+
+button {
+  z-index: 1;
+  position: relative;
+  color: #3D3F47;
+  padding: 0.5em 1em;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+  transition: color 0.4s ease-in-out;
+  
+
+  border: 2px solid #3D3F47;
+  border-radius: 10px;
+}
+
+button::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1em;
+  height: 1em;
+/*  border-radius: 50%;
+*/  background-color: #3b7eea;
+  transform-origin: center;
+  transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
+  transition: transform 0.45s ease-in-out;
+
+/*  border-radius: 10px;
+*/}
+
+button:hover {
+  cursor: pointer;
+/*  border-radius: 10px;*/
+  border: 2px solid #3b7eea;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
+
+  color: white;
+}
+
+button:hover::before {
+  transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+
 
 /* Skills Section */
 .skills {
@@ -247,7 +298,7 @@ a.resume-btn {
   height: 5em;
   width: 5em;
   border-radius: 1em;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
 }
 
 .icon-svg {
@@ -287,7 +338,7 @@ a.resume-btn {
 .proj-img > img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
 }
 
 /* Contact Section */
