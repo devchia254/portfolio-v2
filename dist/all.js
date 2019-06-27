@@ -119,7 +119,7 @@ const slideLeft = {
 }
 
 // All Sections
-ScrollReveal().reveal('.section-title', { delay: 300 });
+ScrollReveal().reveal('.section-title', { delay: 300, reset:  true });
 // Home Section
 ScrollReveal().reveal('.home-items', slideRight);
 // About Section
