@@ -96,7 +96,7 @@ a.resume-btn {
   align-items: flex-start;
   height: 100vh;
 
-  background-image: url(../img/dt.png);
+  background-image: url(../assets/img/dt.png);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
