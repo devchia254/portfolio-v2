@@ -3,7 +3,12 @@
 /*======= Global Attributes =======*/
 html {
   box-sizing: border-box;
+  overflow-x: hidden;
 }
+
+/* html.sr .load-hidden {
+  visibility: hidden;
+} */
 
 *, *::before, *::after {
   box-sizing: inherit;
@@ -165,7 +170,7 @@ a.resume-btn {
 }
 
 .aboutme-item2 {
-  grid-row: span 2;
+  /* grid-row: span 2; */
   display: grid;
   justify-items: center;
   grid-gap: 20px;
