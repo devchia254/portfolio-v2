@@ -3,7 +3,9 @@
 /*======= Global Attributes =======*/
 html {
   box-sizing: border-box;
-  overflow-x: hidden;
+
+  /* overflow-x: hidden;
+  width: 100%; */
 }
 
 /* html.sr .load-hidden {
@@ -151,26 +153,38 @@ a.resume-btn {
 .aboutme {
   display: grid;
   grid-template-columns: 3fr 2fr ;
-/*  grid-gap: 20px;
-*/  justify-items: center;
+  /* grid-template-rows: 1fr 3fr; */
+  /* grid-gap: 20px;   */
+  /* grid-template-areas:
+  "test1"
+  "test2 test3"; */
+  /* justify-items: center; */
   align-items: start;
-}
 
-.aboutme .section-title {
-  grid-column: span 2;
-  /* grid-column: 1 / 3; */
 }
 
 .aboutme-items {
   
+}
+.aboutme-item1 {
+  /* grid-column: span 2; */
+  /* grid-area: "test1"; */
+  grid-column: 1 / -1;
+  order: 1;
+}
+
+.aboutme-item2 {
+  /* grid-area: "test2"; */
+  order: 2;
 }
 
 .aboutme-content {
   padding: 0 1em;
 }
 
-.aboutme-item2 {
-  /* grid-row: span 2; */
+.aboutme-item3 {
+  /* grid-area: "test3"; */
+  order: 3;
   display: grid;
   justify-items: center;
   grid-gap: 20px;
@@ -184,7 +198,7 @@ a.resume-btn {
   height: 240px;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
   /* margin: 20px 0px; */
 }
 
@@ -215,6 +229,7 @@ a.resume-btn {
   position: relative;
   color: #3D3F47;
   padding: 0.5em 1em;
+  margin-bottom: 1em;
   outline: none;
   border: none;
   background-color: transparent;
@@ -263,16 +278,19 @@ a.resume-btn {
   grid-template-columns: 3fr 2fr;
 }
 
-.skills .section-title {
-  grid-column: span 2;
+.skills-title {
+  order: 1;
+  grid-column: 1/-1;
 }
 
 .skills-content {
+  order: 3;
   padding: 0 1em;
 }
 
 .icon-list {
   /* padding:20px; */
+  order:2;
   display:grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, 120px);
@@ -303,7 +321,7 @@ a.resume-btn {
   height: 5em;
   width: 5em;
   border-radius: 1em;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
 }
 
 .icon-svg {
@@ -343,7 +361,7 @@ a.resume-btn {
 .proj-img > img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.16);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
 }
 
 /* Contact Section */
@@ -359,8 +377,8 @@ a.resume-btn {
 /*======== Reusable/Testing Classes ========*/
 
 .card {
-  /* border-radius: 3px; */
-   /*border: 2px solid lightgray;*/ 
+  /* background: lightgray;
+  border: 2px solid darkgrey;  */
   /* padding: 1em; */
 }
 
@@ -487,6 +505,28 @@ a.resume-btn {
   section {
     /* min-height: 100vh; */
     padding: 2em 1em;
+  }
+
+  /* Responsive - About Section */
+  .aboutme-item2 {
+    order: 3;
+    grid-column: 1/-1;
+  }
+
+  .aboutme-item3 {
+    order: 2;
+    grid-column: 1/-1;
+  }
+
+  /* Responsive - Skills Section */
+  .skills-content {
+    order: 2;
+    grid-column: 1/-1;
+  }
+
+  .icon-list {
+    order: 3;
+    grid-column: 1/-1;
   }
 }
 

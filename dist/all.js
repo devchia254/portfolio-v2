@@ -100,37 +100,37 @@ window.onload = function() {
 
 const slideRight = {
     delay: 350,
-    distance: '100px',
+    distance: '50px',
     duration: 1000,
     origin: 'left',
     easing: 'ease',
-    interval: '500',
+    interval: '250',
     reset: true
 }
 
-const slideLeft = {
-    delay: 700,
-    distance: '100px',
+const slideUp = {
+    delay: 550,
+    distance: '50px',
     duration: 1000,
-    origin: 'right',
+    origin: 'bottom',
     easing: 'ease',
     interval: '500',
     reset: true
 }
 
 // All Sections
-ScrollReveal().reveal('.section-title', { delay: 300, reset:  true });
+ScrollReveal().reveal('.section-title', { delay: 350, reset:  true });
 // Home Section
 ScrollReveal().reveal('.home-items', slideRight);
 // About Section
-ScrollReveal().reveal('.aboutme-item1', slideRight);
-ScrollReveal().reveal('.aboutme-item2', slideLeft);
+ScrollReveal().reveal('.aboutme-item2', slideRight);
+ScrollReveal().reveal('.aboutme-item3', slideUp);
 // Skills Section
-ScrollReveal().reveal('.icon-list', slideRight);
-ScrollReveal().reveal('.skills-content', slideLeft);
+ScrollReveal().reveal('.icon-list', slideUp);
+ScrollReveal().reveal('.skills-content', slideRight);
 // Portfolio Section
 ScrollReveal().reveal('.proj-content', slideRight);
-ScrollReveal().reveal('.proj-img', slideLeft);
+ScrollReveal().reveal('.proj-img', slideUp);
 // Contact Section
 // ScrollReveal().reveal('.contact', { delay: 1000 });
 
