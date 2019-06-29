@@ -22,7 +22,7 @@ const slideUp = {
 }
 
 // All Sections
-ScrollReveal().reveal('.section-title', { delay: 350, reset:  true });
+ScrollReveal().reveal('.section-title', { delay: 350, reset: true });
 // Home Section
 ScrollReveal().reveal('.home-items', slideRight);
 // About Section
@@ -35,7 +35,7 @@ ScrollReveal().reveal('.skills-content', slideRight);
 ScrollReveal().reveal('.proj-content', slideRight);
 ScrollReveal().reveal('.proj-img', slideUp);
 // Contact Section
-// ScrollReveal().reveal('.contact', { delay: 1000 });
+ScrollReveal().reveal('.contact', { delay: 350, reset: true });
 
 
 // const leftSide = [
