@@ -35,7 +35,7 @@ ScrollReveal().reveal('.skills-content', slideRight);
 ScrollReveal().reveal('.proj-content', slideRight);
 ScrollReveal().reveal('.proj-img', slideUp);
 // Contact Section
-ScrollReveal().reveal('.contact', { delay: 350, reset: true });
+ScrollReveal().reveal('.contact-items', { delay: 350, reset: true });
 
 
 // const leftSide = [

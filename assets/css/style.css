@@ -308,11 +308,53 @@ a.resume-btn {
 
 /* Contact Section */
 .contact {
+  background-color: #3D3F47;
+}
+
+.contact-items {
   display: flex;
+}
+
+.contact-item1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #3D3F47;
+}
+
+.contact-item2 {
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3.5em;
+  width: 3.5em;
+  margin: 0 0.5em;
+  border-radius: 1em;
+  /* box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08); */
+}
+
+.contact-icons:hover {
+  border: 1px solid white;
+}
+
+.contact-icons-svg {
+  height: 2.5em;
+  width: auto;
+}
+
+.location {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.location > p {
+  margin: 0 0.5em;
 }
 
 /*======== Reusable/Testing Classes ========*/
