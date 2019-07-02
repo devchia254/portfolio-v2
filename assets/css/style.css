@@ -67,7 +67,7 @@ a.home-btn {
   color: whitesmoke;
 }
 
-a.resume-btn {
+a.bubble-btn {
   text-decoration: none;
 }
 
@@ -177,12 +177,10 @@ a.resume-btn {
   margin-top: -15px;
 }
 
-.resume-btn {
+.bubble-btn {
   z-index: 1;
   position: relative;
   color: #3D3F47;
-  padding: 0.5em 1em;
-  margin-bottom: 2em;
   outline: none;
   border: none;
   background-color: transparent;
@@ -193,7 +191,7 @@ a.resume-btn {
   border-radius: 10px;
 }
 
-.resume-btn::before {
+.bubble-btn::before {
   content: '';
   z-index: -1;
   position: absolute;
@@ -209,7 +207,7 @@ a.resume-btn {
   background-image: linear-gradient(19deg, #10c5f8 0%, #6736dd 100%);
 }
 
-.resume-btn:hover {
+.bubble-btn:hover {
   cursor: pointer;
 
   border: 2px solid #3b7eea;
@@ -217,8 +215,13 @@ a.resume-btn {
   color: white;
 }
 
-.resume-btn:hover::before {
+.bubble-btn:hover::before {
   transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
+}
+
+.resume-btn{
+  padding: 0.5em 1em;
+  margin-bottom: 2em;
 }
 
 /* Skills Section */
@@ -279,7 +282,7 @@ a.resume-btn {
 .project-items {
   display: flex;
   flex-wrap: wrap;
-  margin: 50px 0;
+  margin-bottom: 5em;
 }
 
 .proj-content {
@@ -304,6 +307,19 @@ a.resume-btn {
   width: 100%;
   border-radius: 10px;
   box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
+}
+
+.proj-content-items {
+  display: flex;
+  justify-content: flex-start;
+} 
+
+.proj-content-items > a {
+  margin-right: 0.5em;
+}
+
+.proj-btn {
+  padding: 0.25em 0.5em;
 }
 
 /* Contact Section */
@@ -339,7 +355,8 @@ a.resume-btn {
 }
 
 .contact-icons:hover {
-  border: 1px solid white;
+  /* border: 1px solid white; */
+  transform: translate(0, -1.5px);
 }
 
 .contact-icons-svg {
