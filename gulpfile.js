@@ -6,6 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const minify = require('gulp-minify');
 const postcss = require('gulp-postcss');
+const imagemin = require('gulp-imagemin');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var replace = require('gulp-replace');
@@ -14,7 +15,8 @@ var replace = require('gulp-replace');
 // File paths
 const files = { 
     cssPath: 'assets/css/**/*.css',
-    jsPath: 'assets/js/**/*.js'
+    jsPath: 'assets/js/**/*.js',
+    imgPath: 'assets/img/*'
 }
 
 // CSS task: adds vendor prefixes and minifies style.css
@@ -38,6 +40,12 @@ function jsTask(){
         .pipe(dest('dist')
     );
 }
+
+function imgSquash() {
+    return src("./img/*") // Check this out later
+        .pipe(imagemin())
+        .pipe(dest("./dist/img"));
+    }
 
 // Cachebust
 var cbString = new Date().getTime();
