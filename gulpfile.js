@@ -6,6 +6,7 @@ const sourcemaps = require('gulp-sourcemaps');
 const concat = require('gulp-concat');
 const minify = require('gulp-minify');
 const postcss = require('gulp-postcss');
+const imagemin = require('gulp-imagemin');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 var replace = require('gulp-replace');
@@ -14,7 +15,8 @@ var replace = require('gulp-replace');
 // File paths
 const files = { 
     cssPath: 'assets/css/**/*.css',
-    jsPath: 'assets/js/**/*.js'
+    jsPath: 'assets/js/**/*.js',
+    imgPath: 'assets/img/*'
 }
 
 // CSS task: adds vendor prefixes and minifies style.css
@@ -39,6 +41,12 @@ function jsTask(){
     );
 }
 
+function imgSquash() {
+    return src(files.imgPath) // Check this out later
+        .pipe(imagemin())
+        .pipe(dest("dist/images"));
+    }
+
 // Cachebust
 var cbString = new Date().getTime();
 function cacheBustTask(){
@@ -50,15 +58,15 @@ function cacheBustTask(){
 // Watch task: watch CSS and JS files for changes
 // If any change, run css and js tasks simultaneously
 function watchTask(){
-    watch([files.cssPath, files.jsPath], 
-        parallel(cssTask, jsTask));    
+    watch([files.cssPath, files.jsPath, files.imgPath], 
+        parallel(cssTask, jsTask, imgSquash));    
 }
 
 // Export the default Gulp task so it can be run
 // Runs the css and js tasks simultaneously
 // then runs cacheBust, then watch task
 exports.default = series(
-    parallel(cssTask, jsTask), 
+    parallel(cssTask, jsTask, imgSquash), 
     cacheBustTask,
     watchTask
 );
