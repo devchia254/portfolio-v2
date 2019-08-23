@@ -42,9 +42,9 @@ function jsTask(){
 }
 
 function imgSquash() {
-    return src("./img/*") // Check this out later
+    return src(files.imgPath) // Check this out later
         .pipe(imagemin())
-        .pipe(dest("./dist/img"));
+        .pipe(dest("dist/images"));
     }
 
 // Cachebust
@@ -58,15 +58,15 @@ function cacheBustTask(){
 // Watch task: watch CSS and JS files for changes
 // If any change, run css and js tasks simultaneously
 function watchTask(){
-    watch([files.cssPath, files.jsPath], 
-        parallel(cssTask, jsTask));    
+    watch([files.cssPath, files.jsPath, files.imgPath], 
+        parallel(cssTask, jsTask, imgSquash));    
 }
 
 // Export the default Gulp task so it can be run
 // Runs the css and js tasks simultaneously
 // then runs cacheBust, then watch task
 exports.default = series(
-    parallel(cssTask, jsTask), 
+    parallel(cssTask, jsTask, imgSquash), 
     cacheBustTask,
     watchTask
 );
