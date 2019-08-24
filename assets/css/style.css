@@ -11,6 +11,7 @@ html {
 
 body {
     margin: 0;
+    scroll-behavior: smooth;
 }
 
 section {
@@ -117,7 +118,7 @@ a.bubble-btn {
   background-color: #3D3F47;
   transform-origin: center left;
   transform: scaleX(0);
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.2s ease-in-out;
   border-radius: 8px;
 }
 
@@ -201,17 +202,18 @@ a.bubble-btn {
   height: 1em;  
   transform-origin: center;
   transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
-  transition: transform 0.45s ease-in-out;
+  transition: transform 0.3s ease-in-out;
   
   background-color: #10c5f8;
   background-image: linear-gradient(19deg, #10c5f8 0%, #6736dd 100%);
+  border-radius: 50%;
 }
 
 .bubble-btn:hover {
   cursor: pointer;
 
   border: 2px solid #3b7eea;
-  box-shadow: 0 8px 40px rgba(16, 197, 248, 0.5), 0 3px 11px 0 rgba(103, 54, 221, 0.5);
+  box-shadow: 0 1px 30px rgba(16, 197, 248, 0.5), 0 1px 10px 0 rgba(103, 54, 221, 0.5);
   color: white;
 }
 
@@ -383,14 +385,14 @@ a.bubble-btn {
 }
 
 /*========= Flexbox Navbar  =========*/
-
+/* Fixes the navbar at the top window */
 .fixed-nav {
   position: fixed;
   width: 100%;
   top:0;
   z-index: 999;
 }
-
+/* Organises the child items of the navbar */
 .navbar {
   display: flex;
   justify-content: space-between;

@@ -31,23 +31,20 @@ function cssTask(){
 
 // JS task: concatenates and minifies JS files to script.js
 function jsTask(){
-    return src([
-        files.jsPath
-        //,'!' + 'includes/js/jquery.min.js', // to exclude any specific files
-        ])
+    return src(files.jsPath)
         .pipe(concat('all.js'))
         .pipe(minify())
         .pipe(dest('dist')
     );
 }
-
+// imgSquash: minifies all img files
 function imgSquash() {
-    return src(files.imgPath) // Check this out later
+    return src(files.imgPath)
         .pipe(imagemin())
         .pipe(dest("dist/images"));
     }
 
-// Cachebust
+// Cachebust - prevents caching of website saving into the browser by randomising the string number of the filename
 var cbString = new Date().getTime();
 function cacheBustTask(){
     return src(['index.html'])
@@ -58,15 +55,20 @@ function cacheBustTask(){
 // Watch task: watch CSS and JS files for changes
 // If any change, run css and js tasks simultaneously
 function watchTask(){
-    watch([files.cssPath, files.jsPath, files.imgPath], 
-        parallel(cssTask, jsTask, imgSquash));    
+    // watch([files.cssPath, files.jsPath, files.imgPath], 
+    //     parallel(cssTask, jsTask, imgSquash));
+    watch([files.cssPath, files.jsPath], 
+        parallel(cssTask, jsTask));
 }
 
 // Export the default Gulp task so it can be run
 // Runs the css and js tasks simultaneously
 // then runs cacheBust, then watch task
 exports.default = series(
-    parallel(cssTask, jsTask, imgSquash), 
+    // parallel(cssTask, jsTask, imgSquash), 
+    parallel(cssTask, jsTask), 
     cacheBustTask,
     watchTask
 );
+
+// Enable imgSquash and files.imgPath when portfolio is completed coz takes 1 min to apply minified image
