@@ -11,7 +11,8 @@ html {
 
 body {
     margin: 0;
-    scroll-behavior: smooth;
+    /* Enable smooth scrolling */
+    scroll-behavior: smooth; 
 }
 
 section {
@@ -288,16 +289,17 @@ a.bubble-btn {
 }
 
 .proj-content {
-  flex: 5 1 200px;
+  flex: 5 1 300px;
   /* flex-basis: 200px;
   flex-grow: 5;
   flex-shrink: 1; */
 
   padding: 0 1em;
+  margin-bottom: 2em;
 }
 
 .proj-img {
-  flex: 5 1 400px;
+  flex: 5 1 500px;
   /* flex-basis: 400px;
   flex-grow: 5;
   flex-shrink:1; */
@@ -448,7 +450,8 @@ a.bubble-btn {
   color: rgba(255, 255, 255, 1);
 }
 
-@media screen and (max-width: 768px) {
+/* RESPONSIVE DESIGN - Extra small devices (phones, 600px and down) */
+@media screen and (max-width: 600px) {
 
   .logo {
     display: inline-block;
@@ -501,7 +504,6 @@ a.bubble-btn {
 
   /* Global attributes */
   section {
-    /* min-height: 100vh; */
     padding: 2em 1em;
   }
 
@@ -509,8 +511,12 @@ a.bubble-btn {
   .cover-title {
     margin-bottom: 0.5em;
   }
+}
 
-  /* Responsive - About Section */
+/* RESPONSIVE DESIGN - Small devices (phones, 768px and down) */
+@media only screen and (max-width: 768px) {
+  
+  /* About Section */
   .aboutme-item2 {
     order: 3;
     grid-column: 1/-1;
@@ -521,15 +527,36 @@ a.bubble-btn {
     grid-column: 1/-1;
   }
 
-  /* Responsive - Skills Section */
+  /* Skills Section */
   .skills-content {
     order: 2;
     grid-column: 1/-1;
   }
-
+  
   .icon-list {
     order: 3;
     grid-column: 1/-1;
   }
+}
 
+/* Small devices (portrait tablets and large phones, between 600px and 767px) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  section {
+    padding: 2em 2em;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  section {padding: 2em 3em;}
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  section {padding: 2em 4em;}
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  section {padding: 2em 6em;}
 }
