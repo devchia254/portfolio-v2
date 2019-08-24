@@ -29,6 +29,7 @@ window.onscroll = function changeClass(){
     }
 }
 
+// SMOOTH SCROLL FUNCTION NO LONGER NECESSARY
 // window.onload = function() {
 
 //     const easeInCubic = function (t) { return t*t*t }	
@@ -91,9 +92,6 @@ window.onscroll = function changeClass(){
 // }
 
 
-
-// ScrollReveal({ reset: true });
-
 const slideRight = {
     delay: 350,
     distance: '50px',
@@ -110,32 +108,15 @@ const slideUp = {
     duration: 1000,
     origin: 'bottom',
     easing: 'ease',
-    interval: '500',
-    reset: true
+    interval: '250'
 }
 
-// All Sections
-ScrollReveal().reveal('.section-title', { delay: 350, reset: true });
-// Home Section
+// Home Section - Slide Right
 ScrollReveal().reveal('.home-items', slideRight);
-// About Section
-ScrollReveal().reveal('.aboutme-item2', slideRight);
-ScrollReveal().reveal('.aboutme-item3', slideUp);
-// Skills Section
-ScrollReveal().reveal('.icon-list', slideUp);
-ScrollReveal().reveal('.skills-content', slideRight);
-// Portfolio Section
-ScrollReveal().reveal('.proj-content', slideRight);
-ScrollReveal().reveal('.proj-img', slideUp);
-// Contact Section
-ScrollReveal().reveal('.contact-items', { delay: 350, reset: true });
-
-
-// const leftSide = [
-//     document.querySelectorAll('.home-items'),
-//     document.querySelector('.aboutme-item1'),
-//     document.querySelector('.icon-list'),
-//     document.querySelector('.proj-content')
-// ];
-
-// ScrollReveal().reveal( leftSide, slideRight);
+// Section Title - Slide Up
+ScrollReveal().reveal('.section-title', slideUp);
+// Rest of Sections - Slide Up
+ScrollReveal().reveal('.aboutme-items', slideUp);
+ScrollReveal().reveal('.skills-items', slideUp);
+ScrollReveal().reveal('.project-items', slideUp);
+ScrollReveal().reveal('.contact-items', slideUp);
