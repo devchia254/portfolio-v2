@@ -29,6 +29,7 @@ window.onscroll = function changeClass(){
     }
 }
 
+// SMOOTH SCROLL FUNCTION NO LONGER NECESSARY
 // window.onload = function() {
 
 //     const easeInCubic = function (t) { return t*t*t }	
