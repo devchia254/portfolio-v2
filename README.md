@@ -1,6 +1,8 @@
 # Portfolio Website
 `Live:` https://devchia254.github.io/portfolio-v2/
 
+![Portfolio Screenshot](/dist/images/pj4.PNG)
+
 The design and development of my portfolio website was built from scratch, only applying the basics of HTML, CSS and JavaScript languages.
 
 ## Goals
@@ -11,6 +13,43 @@ The design and development of my portfolio website was built from scratch, only 
 
 ## Features & Code Snippets
 Below are some of the features and code extracts of this coding exercise.
+
+### Scroll Reveal Animation
+---
+Installed the ScrollReveal javaScript library using NPM to easily implement animation features when scrolling.
+
+#### scrollreveal.js
+
+```javascript
+const slideRight = {
+    delay: 350,
+    distance: '50px',
+    duration: 1000,
+    origin: 'left',
+    easing: 'ease',
+    interval: '250',
+    reset: true
+}
+
+const slideUp = {
+    delay: 550,
+    distance: '50px',
+    duration: 1000,
+    origin: 'bottom',
+    easing: 'ease',
+    interval: '250'
+}
+
+// Home Section - Slide Right
+ScrollReveal().reveal('.home-items', slideRight);
+// Section Title - Slide Up
+ScrollReveal().reveal('.section-title', slideUp);
+// Rest of Sections - Slide Up
+ScrollReveal().reveal('.aboutme-items', slideUp);
+ScrollReveal().reveal('.skills-items', slideUp);
+ScrollReveal().reveal('.project-items', slideUp);
+ScrollReveal().reveal('.contact-items', slideUp);
+```
 
 ### Web Performance Optimisation
 ---
