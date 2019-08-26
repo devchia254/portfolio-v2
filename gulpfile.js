@@ -1,5 +1,5 @@
 // Initialize modules
-// Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
+// Destructuring - Importing specific gulp API functions lets us write them below as series() instead of gulp.series()
 const { src, dest, watch, series, parallel } = require('gulp');
 // Importing all the Gulp-related packages we want to use
 const sourcemaps = require('gulp-sourcemaps');
@@ -44,7 +44,7 @@ function imgSquash() {
         .pipe(dest("dist/images"));
     }
 
-// Cachebust - prevents caching of website saving into the browser by randomising the string number of the filename
+// Cachebust: prevents caching of website saving into the browser by randomising the string number of the filename
 var cbString = new Date().getTime();
 function cacheBustTask(){
     return src(['index.html'])
