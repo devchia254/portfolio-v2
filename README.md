@@ -1,148 +1,88 @@
 # Portfolio Website
-`Live:` https://devchia254.github.io/swapi_robots/
+`Live:` https://devchia254.github.io/portfolio-v2/
 
-![App Snapshot](./README_resources/pj.png)
+The design and development of my portfolio website was built from scratch, only applying the basics of HTML, CSS and JavaScript languages.
 
-A web app that displays the characters of Star Wars in the form of robots and cards. Each card displays data of each character in Star Wars.
+## Goals
+- Apply the fundamentals of web development and limit the reliance of web frameworks.
+    - E.g. Mobile Responsiveness - Use CSS Grid, Flexbox and Media Queries, instead of using Bootstrap.
 
-## Info
-- Star Wars character data retrieved from the API: https://swapi.co/api/people/.
-- React app was created using the command `npm install -g create-react-app`
-- Each robot generated is unique to its character and fetched from the API:  `https://robohash.org/${id}?size=200x200`
-
-## Purpose
-The objective is to learn:-
-
-- The fundamentals of how to fetch data from an API
-- How to use AJAX and Promises
+- Apply web performance optimisation techniques.
 
 ## Features & Code Snippets
 Below are some of the features and code extracts of this coding exercise.
 
-### Fetch API
+### Web Performance Optimisation
 ---
-![AJAX Fetching](./README_resources/gif-ajax2.gif)
+#### Gulp
 
-Before storing the character's data in the  `state`, an array  is created for listing all 10 URLs for fetching all the character's data.
+Familiarising with Gulp to automate my workflow and facilitate the development process. The packages used:
 
-Once all the URLs are listed then the JSON data is fetched by using `Promises.all` and stored in the `state`, within `api_data`.
+1. **autoprefixer** - Adds vendor prefixes to enable cross-browser adaptability
+2. **cssnano** - Minifies the CSS file
+3. **gulp-concat** - Concatenates all the JS files into one (all.js) 
+4. **gulp-imagemin** - Minifies the images
+5. **gulp-minify** - Minifies the JS file (once all JS files have been concatenanted)
+6. **gulp-postcss** - A CSS parser for running autoprefixer and cssnano
+7. **gulp-replace** - Adds a string parameter to CSS/JS references (necessary for cache busting) 
+8. **gulp-sourcemaps** - Maps the CSS styles back to the original CSS file in your broswer dev tools
 
-##### App.js:
+#### gulpfile.js:
 ```javascript
-componentDidMount() {
-    const urlsArray = [];
+// File paths
+const files = { 
+    cssPath: 'assets/css/**/*.css',
+    jsPath: 'assets/js/**/*.js',
+    imgPath: 'assets/img/*'
+}
 
-    for(let i = 1; i < 10; i++) {
-      urlsArray.push('https://swapi.co/api/people/?page=' + i.toString());
-    }
+// CSS task: adds vendor prefixes and minifies style.css
+function cssTask(){    
+    return src(files.cssPath)
+        .pipe(sourcemaps.init()) // initialize sourcemaps first
+        .pipe(postcss([ autoprefixer(), cssnano() ])) // PostCSS plugins
+        .pipe(sourcemaps.write('.')) // write sourcemaps file in current directory
+        .pipe(dest('dist')
+    ); // put final CSS in dist folder
+}
 
-    const charsData = [];
-
-    const charsFetch = urlsArray.map(url => fetch(url)
-        .then(res => res.json())
-        .then(data => data.results.map(user => charsData.push(user)))
+// JS task: concatenates and minifies JS files to script.js
+function jsTask(){
+    return src(files.jsPath)
+        .pipe(concat('all.js'))
+        .pipe(minify())
+        .pipe(dest('dist')
     );
-
-    Promise.all(charsFetch)
-      .then(results => this.setState({api_data: charsData}))
-      .catch((err) => console.log('ERROR, please check', err))
- }
-```
-
-### Dynamic Search
-----
-![Dynamic Search Feature](./README_resources/gif-search2.gif)
-
-`onSearchChange` is a function used for enabling the search feature in the `SearchBox` component.
-
-The `searchfield` narrows down the results by using `array.filter()` method filter on the full list of star wars data. The filtered results are then reflected on the CardList component, simultaneously.
-
-Sorting the star wars data and converting it to lowercase provides convenience, in terms of display and comparison of data.
-
-##### App.js:
-```javascript
-onSearchChange = (event) => {
-    this.setState({ searchfield: event.target.value })
 }
-
-render () {
-	const { api_data, searchfield } = this.state;
-	   
-	const sortedData = api_data.sort((a, b) => a.name.localeCompare(b.name)); // Sorts fetched data
-	
-	const filteredData = sortedData.filter(person =>{
-		return person.name.toLowerCase().includes(searchfield.toLowerCase()); // Converts all names to lowercase for searchfield
-	})
-}
-```
-
-### Fetch JSON data again:
-----
-Since the 'species' attribute provides a URL as a value, therefore JSON data must be fetched again from the URL value to get the 'species' value.
-
-By using `this.props.species[0]`, the first value is retrieved from the URL then stored in the  `state` for the Card component.
-
-
-
-##### Card.js:
-```javascript
-componentDidMount() {
-    // SPECIES //
-      fetch(this.props.species[0])
-        .then(resp => resp.json())
-        .then(json => this.setState({species: json.name}))
-        .catch(() => this.setState({species: 'Species Unknown'}));
-}
-```
-
-### Generate Character Info:
-----
-The CardList component accesses `api_data` from the `state` of the App component, through the use of `props` i.e. `filteredData`.
-
-Once the `api_data` is accessed then each character's data is mapped into individual card. 
-
-##### CardList.js:
-```javascript
-const CardList = ({ api_data }) => {
-
-  const listPeople = api_data.map((user, i) => {
-      return (
-        <Card
-          id = {i+=1}
-          key={user.url}
-          name={user.name}
-          weight={user.mass}
-          birth={user.birth_year}
-          gender={user.gender}
-          species={user.species}
-        />
-      );
+// imgSquash: minifies all img files
+function imgSquash() {
+    return src(files.imgPath)
+        .pipe(imagemin())
+        .pipe(dest("dist/images"));
     }
-  )
-  
-  return (
-    <div>
-      {listPeople}
-    </div>
-  );
+
+// Cachebust: prevents caching of website saving into the browser by randomising the string number of the filename
+var cbString = new Date().getTime();
+function cacheBustTask(){
+    return src(['index.html'])
+        .pipe(replace(/cb=\d+/g, 'cb=' + cbString))
+        .pipe(dest('.'));
 }
-```
 
-## NPM Dev Packages:
+// Watch task: watch CSS and JS files for changes
+// If any change, run css and js tasks simultaneously
+function watchTask(){
+    watch([files.cssPath, files.jsPath, files.imgPath], 
+        parallel(cssTask, jsTask, imgSquash));
+}
 
-`gh-pages` was used to deploy the react app on Github Pages.
+// Export the default Gulp task so it can be run
+// Runs the css, js tasks, and imqSquash simultaneously
+// then runs cacheBust, then watch task
+exports.default = series(
+    parallel(cssTask, jsTask, imgSquash), 
+    cacheBustTask,
+    watchTask
+);
 
-`react` , `react-dom` and `react-scripts`, were initiated from the create-react-app command.
-
-`tachyons` is a package for styling the site with greater ease.
-
-
-```json
-"dependencies": {
-    "gh-pages": "^2.0.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1",
-    "tachyons": "^4.11.1"
-  }
 ```
