@@ -173,7 +173,7 @@ a.bubble-btn {
   height: 240px;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 2px 6px 0 rgba(0,0,0,0.06);
 }
 
 .img-frame img {
@@ -275,7 +275,7 @@ a.bubble-btn {
   height: 5em;
   width: 5em;
   border-radius: 1em;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 2px 6px 0 rgba(0,0,0,0.06);
 }
 
 .icon-svg {
@@ -313,7 +313,7 @@ a.bubble-btn {
 .proj-img > img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.2), 0 3px 11px 0 rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 2px 6px 0 rgba(0,0,0,0.06);
 }
 
 
