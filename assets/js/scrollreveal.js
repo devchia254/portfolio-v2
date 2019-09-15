@@ -1,7 +1,7 @@
 const slideRight = {
     delay: 650,
     distance: '50px',
-    duration: 500,
+    duration: 1000,
     origin: 'left',
     easing: 'ease',
     interval: '250',
