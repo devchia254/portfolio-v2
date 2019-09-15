@@ -93,9 +93,9 @@ window.onscroll = function changeClass(){
 
 
 const slideRight = {
-    delay: 350,
+    delay: 650,
     distance: '50px',
-    duration: 1000,
+    duration: 500,
     origin: 'left',
     easing: 'ease',
     interval: '250',
