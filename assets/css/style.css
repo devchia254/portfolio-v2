@@ -3,6 +3,7 @@
 /*======= Global Attributes =======*/
 html {
   box-sizing: border-box;
+  /* Enable smooth scrolling */
   scroll-behavior: smooth; 
 }
 
@@ -12,7 +13,6 @@ html {
 
 body {
     margin: 0;
-    /* Enable smooth scrolling */
 }
 /* 
 section {
