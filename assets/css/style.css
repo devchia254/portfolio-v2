@@ -1,22 +1,24 @@
-@import url('https://fonts.googleapis.com/css?family=Karla:700|Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Karla:700|Montserrat&display=swap");
 
 /*======= Global Attributes =======*/
 html {
   box-sizing: border-box;
   /* Enable smooth scrolling */
-  scroll-behavior: smooth; 
+  scroll-behavior: smooth;
 }
 
 html.sr .load-hidden {
   visibility: hidden;
 }
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: inherit;
 }
 
 body {
-    margin: 0;
+  margin: 0;
 }
 /* 
 section {
@@ -25,18 +27,23 @@ section {
 
 /*======== Fonts & Titles ========*/
 
-h1, h2, h3 {
-  font-family: 'Karla', sans-serif;
-  color: #2F3138;
+h1,
+h2,
+h3 {
+  font-family: "Karla", sans-serif;
+  color: #2f3138;
 }
 
 h2 {
   margin-top: 0;
 }
 
-a, p, li, button {
-  font-family: 'Montserrat', sans-serif;
-  color: #4F535A;
+a,
+p,
+li,
+button {
+  font-family: "Montserrat", sans-serif;
+  color: #4f535a;
   font-weight: 300;
   line-height: 1.5em;
 }
@@ -64,7 +71,7 @@ a, p, li, button {
 }
 
 .aboutme-items p {
-  margin-top:0;
+  margin-top: 0;
 }
 
 .aboutme-items h2 {
@@ -116,14 +123,14 @@ a.bubble-btn {
 }
 
 .home-btn::before {
-  content: '';
+  content: "";
   z-index: -1;
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: #3D3F47;
+  background-color: #3d3f47;
   transform-origin: center left;
   transform: scaleX(0);
   transition: transform 0.2s ease-in-out;
@@ -147,7 +154,7 @@ a.bubble-btn {
 /* About Me Section */
 .aboutme {
   display: grid;
-  grid-template-columns: 4fr 2fr ;
+  grid-template-columns: 4fr 2fr;
   align-items: start;
 }
 
@@ -177,7 +184,7 @@ a.bubble-btn {
   height: 240px;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 2px 6px 0 rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
 }
 
 .img-frame img {
@@ -189,29 +196,29 @@ a.bubble-btn {
 .bubble-btn {
   z-index: 1;
   position: relative;
-  color: #3D3F47;
+  color: #3d3f47;
   outline: none;
   border: none;
   background-color: transparent;
   overflow: hidden;
   transition: color 0.4s ease-in-out;
 
-  border: 2px solid #3D3F47;
+  border: 2px solid #3d3f47;
   border-radius: 10px;
 }
 
 .bubble-btn::before {
-  content: '';
+  content: "";
   z-index: -1;
   position: absolute;
   top: 50%;
   left: 50%;
   width: 1em;
-  height: 1em;  
+  height: 1em;
   transform-origin: center;
   transform: translate3d(-50%, -50%, 0) scale3d(0, 0, 0);
   transition: transform 0.4s ease-in-out;
-  
+
   background-color: #10c5f8;
   background-image: linear-gradient(19deg, #10c5f8 0%, #6736dd 100%);
   border-radius: 50%;
@@ -221,7 +228,8 @@ a.bubble-btn {
   cursor: pointer;
 
   border: 2px solid #3b7eea;
-  box-shadow: 0 1px 30px rgba(16, 197, 248, 0.5), 0 1px 10px 0 rgba(103, 54, 221, 0.5);
+  box-shadow: 0 1px 30px rgba(16, 197, 248, 0.5),
+    0 1px 10px 0 rgba(103, 54, 221, 0.5);
   color: white;
 }
 
@@ -229,7 +237,7 @@ a.bubble-btn {
   transform: translate3d(-50%, -50%, 0) scale3d(15, 15, 15);
 }
 
-.resume-btn{
+.resume-btn {
   padding: 0.5em 1em;
   margin-bottom: 2em;
 }
@@ -251,8 +259,8 @@ a.bubble-btn {
 }
 
 .icon-list {
-  order:2;
-  display:grid;
+  order: 2;
+  display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(auto-fill, 120px);
   justify-content: space-evenly;
@@ -261,7 +269,7 @@ a.bubble-btn {
 
 .icon {
   text-align: center;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .icon:hover {
@@ -269,7 +277,7 @@ a.bubble-btn {
 }
 
 .icon:active {
-  transform: scale(1.0);
+  transform: scale(1);
 }
 
 .icon-bg {
@@ -279,7 +287,7 @@ a.bubble-btn {
   height: 5em;
   width: 5em;
   border-radius: 1em;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 2px 6px 0 rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
 }
 
 .icon-svg {
@@ -317,14 +325,13 @@ a.bubble-btn {
 .proj-img > img {
   width: 100%;
   border-radius: 10px;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.15), 0 2px 6px 0 rgba(0,0,0,0.06);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 6px 0 rgba(0, 0, 0, 0.06);
 }
-
 
 .proj-content-items {
   display: flex;
   justify-content: flex-start;
-} 
+}
 
 .proj-content-items > a {
   margin-right: 0.5em;
@@ -336,7 +343,7 @@ a.bubble-btn {
 
 /* Contact Section */
 .contact {
-  background-color: #3D3F47;
+  background-color: #3d3f47;
 }
 
 .contact-items {
@@ -399,7 +406,7 @@ a.bubble-btn {
 .fixed-nav {
   position: fixed;
   width: 100%;
-  top:0;
+  top: 0;
   z-index: 999;
 }
 /* Organises the child items of the navbar */
@@ -407,7 +414,7 @@ a.bubble-btn {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+
   /* padding bottom prevents li margins from overlapping */
   padding-bottom: 10px;
   height: 50px;
@@ -422,7 +429,7 @@ a.bubble-btn {
 }
 
 .colour {
-  background-color:#3D3F47;
+  background-color: #3d3f47;
 }
 
 .white {
@@ -460,7 +467,6 @@ a.bubble-btn {
 
 /* RESPONSIVE DESIGN (NAV TOGGLE BTN) - Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
-
   .logo {
     display: inline-block;
   }
@@ -474,10 +480,10 @@ a.bubble-btn {
     transition: max-height 0.2s ease-in-out;
   }
 
-  .main-nav.active {    
+  .main-nav.active {
     /* Triggers nav animation */
     max-height: 250px;
-    background-color:#3D3F47;
+    background-color: #3d3f47;
   }
 
   .main-nav li {
@@ -491,7 +497,7 @@ a.bubble-btn {
     position: absolute;
     top: 10px;
     right: 20px;
-    cursor: pointer; 
+    cursor: pointer;
     color: rgba(255, 255, 255, 1);
     font-size: 24px;
   }
@@ -514,7 +520,7 @@ a.bubble-btn {
   .cover-title {
     margin-bottom: 0.5em;
   }
-  
+
   /* Global attributes */
   section {
     padding: 2em 1em;
@@ -523,7 +529,6 @@ a.bubble-btn {
 
 /* RESPONSIVE DESIGN (CONTENT LAYOUT) - Small devices (phones, 768px and down) */
 @media only screen and (max-width: 768px) {
-  
   /* About Section */
   .aboutme-item2 {
     order: 3;
@@ -540,7 +545,7 @@ a.bubble-btn {
     order: 2;
     grid-column: 1/-1;
   }
-  
+
   .icon-list {
     order: 3;
     grid-column: 1/-1;
@@ -556,15 +561,21 @@ a.bubble-btn {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 769px) {
-  section {padding: 2em 3em;}
-} 
+  section {
+    padding: 2em 3em;
+  }
+}
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-  section {padding: 2em 4em;}
-} 
+  section {
+    padding: 2em 4em;
+  }
+}
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-  section {padding: 2em 6em;}
+  section {
+    padding: 2em 6em;
+  }
 }

@@ -50,8 +50,10 @@ function cacheBustTask() {
 // Watch task: watch CSS and JS files for changes
 // If any change, run css and js tasks simultaneously
 function watchTask() {
-  // watch([files.cssPath, files.jsPath, files.imgPath],
-  //     parallel(cssTask, jsTask, imgSquash));
+  // watch(
+  //   [files.cssPath, files.jsPath, files.imgPath],
+  //   parallel(cssTask, jsTask, imgSquash)
+  // );
   watch([files.cssPath, files.jsPath], parallel(cssTask, jsTask));
 }
 
