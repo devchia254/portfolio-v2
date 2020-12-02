@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/devchia254/portfolio-v2.git"
+    "url": "https://github.com/devchia254/portfolio-v2.git"
   },
   "author": "Alexander Chia",
   "license": "ISC",
@@ -17,11 +17,11 @@
   },
   "homepage": "https://github.com/devchia254/portfolio-v2#readme",
   "devDependencies": {
-    "autoprefixer": "^9.6.0",
+    "autoprefixer": "^9.8.6",
     "cssnano": "^4.1.10",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
-    "gulp-imagemin": "^6.1.0",
+    "gulp-imagemin": "^6.2.0",
     "gulp-minify": "^3.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-replace": "^1.0.0",
